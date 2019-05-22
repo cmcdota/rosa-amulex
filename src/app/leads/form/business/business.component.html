@@ -1,0 +1,64 @@
+<form [formGroup]="_businessForm" novalidate>
+
+    <div class="flex-columns">
+        <div class="flex-columns__left">
+            <h6 style="margin-bottom:8px;">01. Информация о клиенте</h6>
+            <p class="disclaimer">Сверьте данные формы с карточкой проспекта и дополните отстутствующие поля вручную</p>
+            <div class="form-group">
+                
+                <rosa-label [value]="'Наименование организации'"></rosa-label>
+                <rosa-input [tabindex]="3" [placeholder]="''" [controlName]="'company'" [controlOptions]="_businessForm.controls['company']" [required]="true"></rosa-input>
+                <rosa-helper [message]="'Обязательно должен быть указан тип организации. На основе поля автоматически оформляется счет'" [type]="'info'"></rosa-helper>
+
+            </div>
+
+            <div class="form-group">
+                <rosa-label [value]="'Инн организации'"></rosa-label>
+                <rosa-input [placeholder]="''" [controlName]="'tax'" [controlOptions]="_businessForm.controls['tax']" [state]="taxFieldState" [tabindex]="4"></rosa-input>
+                <div *ngIf="pending">
+                    <span>Поиск ранее оформленных сертификатов………………</span>
+                </div>
+                <div *ngIf="nestedCerts$.length > 0" class="form-list__suggest">
+                    <h4>Сертификаты выданные другими менеджерами</h4>
+                    <ul>
+                        <li *ngFor="let cert of nestedCerts$">
+                            <rosa-button-flat [content]="cert.certs.name"></rosa-button-flat> <span>{{cert.status | status}} 10 окт. 2018 г.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <rosa-label [value]="'ФИО руководителя'"></rosa-label>
+                <rosa-input [placeholder]="''" [controlName]="'ceo'" [controlOptions]="_businessForm.controls['ceo']" [tabindex]="5"></rosa-input>
+            </div>
+
+            <div class="form-group">
+                <rosa-label [value]="'Контактный телефон'"></rosa-label>
+                <rosa-input [required]="true" [controlName]=" 'phone' " [controlOptions]="_businessForm.controls[ 'phone'] " [tabindex]="6"></rosa-input>
+            </div>
+
+            <div class="form-group ">
+                <rosa-label [value]="'Электронная почта'"></rosa-label>
+                <rosa-input [placeholder]="'Электронная почта'" [controlName]=" 'email' " [controlOptions]="_businessForm.controls[ 'email'] " [tabindex]="5"></rosa-input>
+            </div>
+
+        </div>
+        <div class="flex-columns__right ">
+            <div class="right_inner">
+                <h6>02. Выберите сертификат</h6>
+                <div class="products ">
+                    <div class="products__grid ">
+                        <rosa-tile *ngFor="let product of products; index as i; " [content]="product.name" [price]="product.price" [helperContent]="product.description" [tabindex]="i+6 " [classList]="{ 'selected':activeProduct==i } " (click)="setProduct(product, i) "></rosa-tile>
+                    </div>
+                </div>
+                <div class="form-group__buttons">
+                    <rosa-submit (click)="sendLead()" [className]="'red'" [classType]="'submit'" type="'submit'" [tabindex]="products.length+10" [content]="'Оформить сертификат'"></rosa-submit>
+                </div>
+            </div>
+            <!-- {{_businessForm.value | json}} -->
+        </div>
+    </div>
+
+
+</form>

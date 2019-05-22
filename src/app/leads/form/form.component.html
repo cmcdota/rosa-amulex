@@ -1,0 +1,23 @@
+<rosa-modal [certificate]="modalData" *ngIf="modalController" (closeModal)="closeModal($event)"></rosa-modal>
+<section class="pane-white" id="create">
+    <div class="inner-content">
+        <div class="header">
+            <h2>Сертификаты «Amulex»</h2>
+        </div>
+        <div>
+            <rosa-business (cardRecived)="updateCards($event)"></rosa-business>
+        </div>
+        <div>
+        </div>
+    </div>
+</section>
+<section class="cards-container" id="leadsList">
+    <div *ngIf="certs$ !== 0; else noLeads">
+        <div class="header">
+            <h3>Созданные сертификаты</h3>
+        </div>
+        <rosa-card *ngFor="let cert of certs$ | orderBy:order:ascending;" [cert]="cert" (click)="showModal(cert)"></rosa-card>
+    </div>
+    <ng-template #noLeads>
+    </ng-template>
+</section>

@@ -1,0 +1,81 @@
+@charset 'UTF-8';
+@import 'abstracts/variables',
+'abstracts/functions',
+'abstracts/mixins';
+.pane-white {
+    width: 928px;
+    background: white;
+    margin: 80px auto calc(#{$gp} * 6);
+    position: relative;
+    .inner-content {
+        padding: 0;
+        .header {
+            h2 {
+                font-weight: 400;
+                font-size: 28px;
+                line-height: 40px;
+                margin-bottom: 24px;
+                color: #383838;
+            }
+        }
+    }
+}
+
+.cards-container {
+    width: 928px;
+    margin: 0 auto;
+    padding-bottom: 80px;
+    .header {
+        h3 {
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 32px;
+            margin-bottom: 24px;
+            color: #383838;
+        }
+        p {
+            margin-bottom: 2em;
+        }
+    }
+}
+
+.form-content {
+    margin-top: 32px;
+    width: 1080px;
+}
+
+.noleads {
+    font-size: 24px !important;
+    font-weight: 600!important;
+}
+
+.table-head {
+    width: 100%;
+    display: flex;
+    background: #f6f5f5;
+}
+
+.cell-head {
+    padding: 0 16px;
+    display: inline-block;
+    height: 40px;
+    box-sizing: border-box;
+    &:first-child {
+        width: 288px;
+    }
+    &:nth-child(2) {
+        width: 312px;
+    }
+    &:nth-child(3) {
+        width: 160px;
+    }
+    &:nth-child(4) {
+        width: 188px;
+    }
+    span {
+        font-size: 13px;
+        line-height: 40px;
+        font-weight: 500;
+        color: #434343;
+    }
+}

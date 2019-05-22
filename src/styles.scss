@@ -1,0 +1,40 @@
+@charset 'UTF-8';
+// 1. Configuration and helpers
+@import 'abstracts/variables',
+'abstracts/functions',
+'abstracts/mixins';
+@import 'vendor/reboot';
+@import 'base/base',
+'base/typography',
+'base/helpers';
+* {
+    font-family: 'Graphik LC Web', 'Segoe UI', sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+}
+
+html,
+body {
+    font-size: 10px !important;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    color: #383838;
+    background: #d7d8de;
+    margin: 0;
+    padding: 0;
+}
+
+input,
+label,
+button,
+a {
+    font-family: 'Graphik LC Web', 'Segoe UI', sans-serif !important;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+}

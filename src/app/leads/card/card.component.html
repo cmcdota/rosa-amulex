@@ -1,0 +1,102 @@
+<div class="table-row">
+    <div class="cell">
+        <span class="company">{{cert?.company}}:</span>
+        <span class="certificate">{{cert?.certs.name}}</span>
+    </div>
+    <div class="cell">
+        <span class="status">{{cert?.status | status}}: {{date | date}}</span>
+    </div>
+</div>
+
+<!--
+    "code": {
+    "id": 4,
+    "serial_code": "185-0001002",
+    "activated_code": "488282",
+    "cert_type": "1",
+    "cert_store": "23"
+}
+//  компания
+// статус
+// сертификат
+// номер / код
+// дата
+<div class="card">
+    <h4>{{cert?.company}} <span>{{status}}</span></h4>
+    <div class="secondary_item">
+        <p class="item_header">создан</p>
+        <p class="item_description">{{cert?.created | date}}</p>
+    </div>
+    <div class="secondary_item">
+        <p class="item_header">инн организации:</p>
+        <p class="item_description">{{cert?.tax}}</p>
+    </div>
+    <div class="secondary_item">
+        <p class="item_header">Руководитель:</p>
+        <p class="item_description">{{cert?.company_person}}</p>
+    </div>
+    <div class="secondary_item">
+        <p class="item_header">Телефон:</p>
+        <p class="item_description">{{cert?.phone}}</p>
+    </div>
+    <div class="secondary_item">
+        <p class="item_header">Электронная почта:</p>
+        <p class="item_description">{{cert?.email}}</p>
+    </div>
+    <div class="secondary_item">
+        <p class="item_header">Куратор ДМБ:</p>
+        <p class="item_description">{{cert?.curator_dmb}}</p>
+    </div>
+    <div class="secondary_item">
+        <p class="item_header">Сертификат:</p>
+        <p class="item_description">{{cert?.certs.name}}</p>
+    </div>
+    <div class="secondary_item">
+        <p class="item_header">Стоимость:</p>
+        <p class="item_description">{{cert?.certs.price}}</p>
+    </div>
+    <div class="controls">
+        <rosa-button-flat (click)="alert('234')" [content]="'Открыть сертификат'"></rosa-button-flat>
+        <rosa-button-flat (click)="alert('234')" [content]="'Открыть счет'"></rosa-button-flat>
+        <rosa-button-flat (click)="alert('234')" [content]="'Отправить счет и сертификат клиенту'"></rosa-button-flat>
+    </div>
+</div>
+-->
+<!--
+[
+    {
+        "id": 23,
+        "cert_number": "4",
+        "company": "росбанк",
+        "tax": "7730060164",
+        "created": "2018-10-04",
+        "updated": null,
+        "cert_type": 1,
+        "royalty": null,
+        "company_person": "Поздняков а с ",
+        "phone": "(913)-041-7726",
+        "email": "gag.04@mail.ru",
+        "curator_dmb": "поздняков а с",
+        "teroffice": "0000",
+        "office_name": "головнной",
+        "seller": "поздняков",
+        "rb": "rb064144",
+        "status": 0,
+        "certs": {
+            "id": 1,
+            "name": "Business Lite",
+            "description": "Самый простой пакет юридических услуг",
+            "price": 7000,
+            "royalty_min": 3000,
+            "royalty_max": 3200
+        },
+        "code": {
+            "id": 4,
+            "serial_code": "185-0001002",
+            "activated_code": "488282",
+            "cert_type": "1",
+            "cert_store": "23"
+        }
+    }
+]
+-->

@@ -1,0 +1,49 @@
+*,:after,:before{-webkit-box-sizing:border-box;box-sizing:border-box}html{font-family:sans-serif;line-height:2;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-ms-overflow-style:scrollbar;-webkit-tap-highlight-color:rgba(67,67,67,0)}article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}body{margin:0;font-family:webfont,Helvetica,Segoe UI,Arial,sans-serif;font-size:1.36em;line-height:2;text-align:left;background-color:#fff}[tabindex="-1"]:focus{outline:0!important}hr{-webkit-box-sizing:content-box;box-sizing:content-box;height:0;overflow:visible}h1,h2,h3,h4,h5,h6,p{margin-top:0;margin-bottom:0}abbr[data-original-title],abbr[title]{text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;border-bottom:0}address{font-style:normal;line-height:inherit}address,dl,ol,ul{margin-bottom:1rem}dl,ol,ul{margin-top:0}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:400}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}dfn{font-style:italic}b,strong{font-weight:bolder}small{font-size:80%}sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:hover{color:#06f;text-decoration:none}a:not([href]):not([tabindex]),a:not([href]):not([tabindex]):hover{color:inherit;text-decoration:none}a:not([href]):not([tabindex]):focus{outline:0}code,kbd,pre,samp{font-family:Courier New,DejaVu Sans Mono,Bitstream Vera Sans Mono,Monaco,monospace;font-size:1em}pre{margin-top:0;margin-bottom:1rem;overflow:auto;-ms-overflow-style:scrollbar}figure{margin:0 0 1rem}img{vertical-align:middle;border-style:none}svg:not(:root){overflow:hidden}table{border-collapse:collapse}caption{padding-top:0;padding-bottom:0;color:#000;text-align:left;caption-side:bottom}th{text-align:inherit}label{display:inline-block;margin-bottom:0}button{border-radius:0}button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{padding:0;border-style:none}input[type=checkbox],input[type=radio]{-webkit-box-sizing:border-box;box-sizing:border-box;padding:0}input[type=date],input[type=datetime-local],input[type=month],input[type=time]{-webkit-appearance:listbox}textarea{overflow:auto;resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{display:block;width:100%;max-width:100%;padding:0;margin-bottom:.5rem;font-size:1.5rem;line-height:inherit;color:inherit;white-space:normal}progress{vertical-align:baseline}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:none}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}summary{display:list-item;cursor:pointer}template{display:none}[hidden]{display:none!important}
+
+/**
+ * Set up a decent box model on the root element
+ */html{-webkit-box-sizing:border-box;box-sizing:border-box}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */*,:after,:before{-webkit-box-sizing:inherit;box-sizing:inherit}
+
+/**
+ * Basic styles for links
+ */a{color:#06f;text-decoration:none}a:active,a:focus,a:hover{color:#06f;text-decoration:underline}a,button,h1,h2,h3,h4,h5,h6,input,label,p,span,ul{font-family:webfont,Helvetica,Segoe UI,Arial,sans-serif;color:#434343}h1,h2,h3,h4,h5,h6{font-style:normal;font-weight:600}
+
+/**
+ * Basic typography style for copy text
+ */body,html{font-size:10px}body{font-family:Graphik LC Web,Segoe UI,Arial,sans-serif;color:#434343;font-style:normal;font-weight:400;letter-spacing:0;line-height:2rem;overflow-x:hidden;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adjust:100%;text-size-adjust:100%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}h1{font-size:4.8rem}h1,h2{line-height:1.4;margin-bottom:2rem;font-weight:200}h2{font-size:3.6rem}h3{font-size:3.2rem;line-height:1.4;margin-bottom:2rem;font-weight:300}h4{font-size:2.6rem;font-weight:400}h4,h5{line-height:1.3;margin-bottom:2rem}h5{font-size:2.2rem;font-weight:500}h6{font-size:2rem;line-height:1.3;font-weight:600}h6,p{margin-bottom:2rem}p{font-size:1.6rem}p,span{line-height:1.5}span{font-size:1.4rem;margin-bottom:1.5rem}.rosa-fs-l{font-size:18px;line-height:1.5}.rosa-fs-m{font-size:17px;line-height:1.5}.rosa-fs-r{font-size:14px;line-height:1.5}.rosa-fs-rm{font-size:13px;line-height:1.5}.rosa-fs-rs{font-size:12px;line-height:1.5}.rosa-fs-rxs{font-size:10px;line-height:1.5}
+
+/**
+ * Clear inner floats
+ */.clearfix:after{clear:both;content:"";display:table}
+
+/**
+ * Main content containers
+ * 1. Make the container full-width with a maximum width
+ * 2. Center it in the viewport
+ * 3. Leave some space on the edges, especially valuable on small screens
+ */.container{margin-left:auto;
+  /* 2 */margin-right:auto;
+  /* 2 */
+  /* 3 */
+  /* 3 */width:100%
+  /* 1 */}
+
+/**
+ * Hide text while making it readable for screen readers
+ * 1. Needed in WebKit-based browsers because of an implementation bug;
+ *    See: https://code.google.com/p/chromium/issues/detail?id=457146
+ */.hide-text{overflow:hidden;padding:0;
+  /* 1 */text-indent:101%;white-space:nowrap}
+
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */.visually-hidden{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}*{font-family:Graphik LC Web,Segoe UI,sans-serif!important;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adjust:100%;text-size-adjust:100%}body,html{font-size:10px!important}html{width:100%;height:100%;color:#383838;background:#d7d8de;margin:0;padding:0}a,button,input,label{font-family:Graphik LC Web,Segoe UI,sans-serif!important;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adjust:100%;text-size-adjust:100%}

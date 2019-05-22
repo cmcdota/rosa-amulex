@@ -1,0 +1,24 @@
+@charset 'UTF-8';
+@import 'abstracts/variables',
+'abstracts/functions',
+'abstracts/mixins';
+.helper-message {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    display: inline-block;
+    padding-top: 8px;
+    padding-left: 2px;
+}
+
+.error {
+    color: #f8676a;
+}
+
+.info {
+    color: #555;
+}
+
+.success {
+    color: #26C367;
+}

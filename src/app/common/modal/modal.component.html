@@ -1,0 +1,44 @@
+<div class="container__fixed modal-wrapper">
+    <div class="modal-aligner">
+        <div class="modal-window">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>{{certificate.certs.name}}: <span class="serial-data">{{certificate.code.serial_code}}/{{certificate.code.activated_code}}</span></h3>
+                    <button class="button__modal-close" (click)="close()">
+                      <svg class="svgIcon " viewBox="0 0 32 32" title="close dialog"><path d="M18.1,16l8.9-8.9c0.6-0.6,0.6-1.5,0-2.1c-0.6-0.6-1.5-0.6-2.1,0L16,13.9L7.1,4.9c-0.6-0.6-1.5-0.6-2.1,0c-0.6,0.6-0.6,1.5,0,2.1l8.9,8.9l-8.9,8.9c-0.6,0.6-0.6,1.5,0,2.1c0.3,0.3,0.7,0.4,1.1,0.4s0.8-0.1,1.1-0.4l8.9-8.9l8.9,8.9c0.3,0.3,0.7,0.4,1.1,0.4s0.8-0.1,1.1-0.4c0.6-0.6,0.6-1.5,0-2.1L18.1,16z"></path></svg>
+                  </button>
+                </div>
+
+
+
+                <div class="modal-body">
+                    <div class="status">
+                        <span>{{certificate.status | status}} {{date | date}}</span>
+                    </div>
+                    <ul>
+                        <li>
+                            <p><span>Руководитель: </span>{{certificate.ceo}}</p>
+                        </li>
+                        <li>
+                            <p><span>Компания: </span>{{certificate.company}}</p>
+                        </li>
+                        <li>
+                            <p><span>ИНН: </span>{{certificate.tax}}</p>
+                        </li>
+                        <li>
+                            <p><span>Телефон: </span>{{certificate.phone}}</p>
+                        </li>
+                        <li>
+                            <p><span>Электронная почта: </span>{{certificate.email}}</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <rosa-submit (click)="print()" [className]="'red-modal'" [classType]="'button'" type="'button'" [tabindex]="2" [content]="'Скачать документы'"></rosa-submit>
+                    <rosa-submit (click)="sendMail()" [className]="'secondary'" [classType]="'button'" type="'button'" [tabindex]="3" [content]="'Повторно отправить'"></rosa-submit>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container__fixed modal-overlay" (click)="close()"></div>
+</div>

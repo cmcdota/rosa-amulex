@@ -1,0 +1,53 @@
+@charset 'UTF-8';
+@import 'abstracts/variables',
+'abstracts/functions',
+'abstracts/mixins';
+:host {
+    transition: all .3s ease;
+    line-height: 1em;
+    &:focus {
+        outline: rgba(235, 69, 86, .5) auto 3px;
+    }
+    &:active {
+        outline: none;
+    }
+}
+
+button {
+    @include button-reset;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    transition: all .3s ease;
+    display: block;
+    @include on-event() {
+        transition: all .3s ease;
+    }
+}
+
+.blue {
+    //color: #26a6f3;
+    // color: #4353ff;
+    color: #276EF1;
+    @include on-event() {
+        color: #2362D9;
+    }
+}
+
+.neutral {
+    color: #434343;
+    @include on-event() {
+        color: #131313;
+    }
+}
+
+.header-nav {
+    color: #3B3737 !important;
+    font-size: 14px !important;
+    line-height: 24px;
+    margin-bottom: 0 !important;
+    @include on-event() {
+        color: #9D9B9B !important;
+        transition: all .3s ease;
+    }
+}

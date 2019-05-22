@@ -1,0 +1,25 @@
+@charset 'UTF-8';
+@import 'abstracts/variables',
+'abstracts/functions',
+'abstracts/mixins';
+label {
+    width: 100%;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0;
+    // color: #383838;
+    color: #3B3737;
+    // color: #9f9f9f;
+    margin-bottom: 8px;
+    ;
+    display: inline-block;
+    //text-transform: capitalize;
+    .required {
+        color: $primary;
+    }
+}
+
+.disabled {
+    opacity: .5;
+}
